@@ -1,0 +1,21 @@
+name: Test Pages Configuration
+
+on:
+  workflow_dispatch:
+
+permissions:
+  pages: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Pages Status
+        uses: actions/checkout@v4
+        
+      - name: Test Pages Configuration
+        run: |
+          echo "Testing GitHub Pages configuration..."
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Event: ${{ github.event_name }}" 
